@@ -1,0 +1,12 @@
+{
+  "name": "olona/kaki-theme",
+  "type": "sylius-theme",
+  "extra": {
+    "sylius-theme": {
+      "name": "olona/kaki",
+      "title": "Kaki Theme",
+      "description": "Thème personnalisé pour Olona",
+      "templates": "views"
+    }
+  }
+}

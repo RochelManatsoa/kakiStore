@@ -1,0 +1,7 @@
+{% extends '@!SyliusShop/shared/layout/base.html.twig' %}
+{% block header_logo %}
+  <div style="background:#e8f5e9;padding:6px;border:1px dashed #2e7d32;">
+    LAYOUT KAKI — env: {{ app.environment }} — host: {{ app.request.host }}
+  </div>
+  {{ parent() }}
+{% endblock %}

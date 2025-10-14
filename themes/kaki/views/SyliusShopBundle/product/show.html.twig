@@ -1,0 +1,18 @@
+{% extends '@SyliusShop/shared/layout/base.html.twig' %}
+
+{% block content %}
+<article class="container product-page">
+  <div class="row">
+    <div class="col-md-6">
+      {% include '@SyliusShop/Product/Show/_images.html.twig' with { product: product } %}
+    </div>
+    <div class="col-md-6">
+      <h1>{{ product.name }}</h1>
+      <p class="sku">Réf: {{ product.code }}</p>
+      {% include '@SyliusShop/Product/Show/_price.html.twig' with { product: product } %}
+      {% include '@SyliusShop/Product/Show/_addToCart.html.twig' with { product: product } %}
+      {% include '@SyliusShop/Product/Show/_attributes.html.twig' with { product: product } %}
+    </div>
+  </div>
+</article>
+{% endblock %}
