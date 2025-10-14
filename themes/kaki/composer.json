@@ -6,7 +6,10 @@
       "name": "olona/kaki",
       "title": "Kaki Theme",
       "description": "Thème personnalisé pour Olona",
-      "templates": "views"
+      "paths": {
+        "public": "public",
+        "templates": "templates"
+      }
     }
   }
 }
