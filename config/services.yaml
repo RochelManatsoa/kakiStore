@@ -43,3 +43,6 @@ services:
         tags:
             - { name: 'form.type' }
             - { name: 'sylius.shipping_calculator.form_type', calculator: 'weight_based' }
+parameters:
+    sylius.mailer.sender_address: 'contact@kak-i.com'
+    sylius.mailer.sender_name: 'Nirina'
