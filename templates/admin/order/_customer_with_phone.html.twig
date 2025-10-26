@@ -1,0 +1,32 @@
+{# templates/admin/order/_customer_with_phone.html.twig #}
+
+{# Ici, "data" EST le Customer #}
+{% set customer = data %}
+{% set email    = customer.email ?? '' %}
+
+{# Essaie 1 : champ sur Customer (si tu l'as ajouté) #}
+{% set phone = attribute(customer, 'phoneNumber') %}
+
+{# Si pas de champ phone sur Customer, on tente via la ligne complète (Order)
+   Sylius passe souvent la ressource complète sous "resource" (ou parfois "record"/"row").
+   On garde la logique défensive pour éviter les notices. #}
+{% if not phone and resource is defined and resource %}
+  {% set phone = attribute(resource.billingAddress ?? {}, 'phoneNumber') 
+      ?? attribute(resource.shippingAddress ?? {}, 'phoneNumber') %}
+{% endif %}
+
+<div style="line-height:1.3">
+  <strong>
+    {{ (customer.firstName or customer.lastName)
+      ? (customer.firstName ~ ' ' ~ customer.lastName)|trim
+      : email }}
+  </strong>
+
+  {% if email %}
+    <br><small>{{ email }}</small>
+  {% endif %}
+
+  {% if phone %}
+    <br><small>📞 <a href="tel:{{ phone|replace({' ': ''}) }}">{{ phone }}</a></small>
+  {% endif %}
+</div>

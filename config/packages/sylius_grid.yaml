@@ -1,0 +1,12 @@
+# config/packages/sylius_grid.yaml
+sylius_grid:
+  grids:
+    sylius_admin_order:
+      fields:
+        customer:
+          type: twig
+          label: sylius.ui.customer
+          sortable: customer.email
+          options:
+            template: 'admin/order/_customer_with_phone.html.twig'
+        

@@ -1,0 +1,15 @@
+{
+  "name": "tsenama/shop",
+  "type": "sylius-theme",
+  "extra": {
+    "sylius-theme": {
+      "name": "tsenama/shop",
+      "title": "Tsenama Theme",
+      "description": "Thème personnalisé pour Tsenama",
+      "paths": {
+        "public": "public",
+        "templates": "templates"
+      }
+    }
+  }
+}
