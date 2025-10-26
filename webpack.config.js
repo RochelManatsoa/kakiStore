@@ -32,10 +32,16 @@ Encore
     .cleanupOutputBeforeBuild()
     .enableSourceMaps(!Encore.isProduction())
     .enableVersioning(Encore.isProduction())
-    .enableSassLoader().addEntry('kaki-theme', './themes/kaki/assets/kaki.js')
+    .enableSassLoader()
+    .addEntry('kaki-theme', './themes/kaki/assets/kaki.js')
+    .addEntry('tsenama-theme', './themes/tsenama/assets/tsenama.js')
     .copyFiles({
       from: './themes/kaki/assets/images',
       to: 'kaki/[path][name].[ext]'
+    })
+    .copyFiles({
+      from: './themes/tsenama/assets/images',
+      to: 'tsenama/[path][name].[ext]'
     })
     // .enableStimulusBridge(path.resolve(__dirname, './assets/shop/controllers.json'))
     // remove the following line if you don't want to add automatically controllers provided by plugins
