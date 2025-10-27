@@ -9,4 +9,13 @@ sylius_grid:
           sortable: customer.email
           options:
             template: 'admin/order/_customer_with_phone.html.twig'
+    sylius_admin_customer:
+      fields:
+        email:
+          type: twig
+          label: sylius.ui.email
+          sortable: email
+          path: .
+          options:
+            template: 'admin/customer/_email_with_phone.html.twig'
         
