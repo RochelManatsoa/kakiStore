@@ -1,0 +1,32 @@
+{# "data" EST le Customer #}
+{% set customer = data %}
+{% set email = customer.email ?? '' %}
+{% set phone = null %}
+
+{# 1) Téléphone directement sur Customer (si tu as ajouté ce champ) #}
+{% if customer.phoneNumber is defined and customer.phoneNumber %}
+  {% set phone = customer.phoneNumber %}
+{% endif %}
+
+{# 2) Fallback : defaultAddress.phoneNumber #}
+{% if not phone and customer.defaultAddress is defined and customer.defaultAddress %}
+  {% if customer.defaultAddress.phoneNumber is defined and customer.defaultAddress.phoneNumber %}
+    {% set phone = customer.defaultAddress.phoneNumber %}
+  {% endif %}
+{% endif %}
+
+{# 3) Fallback : première adresse contenant un phone #}
+{% if not phone and customer.addresses is defined and customer.addresses is iterable and customer.addresses|length > 0 %}
+  {% for addr in customer.addresses %}
+    {% if not phone and addr.phoneNumber is defined and addr.phoneNumber %}
+      {% set phone = addr.phoneNumber %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+<div style="line-height:1.3">
+  <strong>{{ email }}</strong>
+  {% if phone %}
+    <br><small>📞 <a href="tel:{{ phone|replace({' ': ''}) }}">{{ phone }}</a></small>
+  {% endif %}
+</div>
