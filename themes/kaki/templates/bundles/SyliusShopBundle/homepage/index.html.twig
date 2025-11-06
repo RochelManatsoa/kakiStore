@@ -1,0 +1,12 @@
+{# IMPORTANT: @!SyliusShop = étendre le template core, pas celui du thème #}
+{% extends '@!SyliusShop/homepage/index.html.twig' %}
+
+{% block content %}
+  <section class="home-hero" style="padding:48px 0;background:#faf6ff;text-align:center;">
+    <h1 style="margin:0 0 10px;">KAK-I — Bienvenue 🟣</h1>
+    <p style="margin:0 0 16px;">Produits naturels & artisanaux, sélectionnés par KAK-I.</p>
+    <a class="ui primary button" href="#">Voir la boutique</a>
+  </section>
+
+  {{ parent() }} 
+{% endblock %}

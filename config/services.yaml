@@ -28,3 +28,18 @@ services:
     App\Controller\:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
+
+
+    # Calculator
+    App\Shipping\Calculator\WeightBasedCalculator:
+        tags:
+            - { name: sylius.shipping_calculator, calculator: 'weight_based', label: 'Poids (par paliers)' }
+
+    # Form Types
+    App\Form\Type\Shipping\Calculator\WeightTierType:
+        tags: ['form.type']
+
+    App\Form\Type\Shipping\Calculator\WeightBasedConfigurationType:
+        tags:
+            - { name: 'form.type' }
+            - { name: 'sylius.shipping_calculator.form_type', calculator: 'weight_based' }
