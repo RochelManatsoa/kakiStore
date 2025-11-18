@@ -1,0 +1,8 @@
+# config/packages/bitbag_elasticsearch_plugin.yaml
+bit_bag_sylius_elasticsearch:
+    shop_products:
+        enabled: true
+    resources:
+        product:
+            classes:
+                model: Sylius\Component\Core\Model\Product
