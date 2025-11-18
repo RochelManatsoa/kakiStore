@@ -16,6 +16,19 @@
     "babdev/pagerfanta-bundle": {
         "version": "v4.5.0"
     },
+    "bitbag/elasticsearch-plugin": {
+        "version": "5.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "main",
+            "version": "5.0",
+            "ref": "a4a9949a6895fa7a1695236f5c687ea729bedfab"
+        },
+        "files": [
+            "config/packages/bitbag_elasticsearch_plugin.yaml",
+            "config/routes/bitbag_elasticsearch_plugin.yaml"
+        ]
+    },
     "doctrine/annotations": {
         "version": "2.0",
         "recipe": {
@@ -69,6 +82,18 @@
             "version": "2.0",
             "ref": "1e012e04f573524ca83795cd19df9ea690adb604"
         }
+    },
+    "friendsofsymfony/elastica-bundle": {
+        "version": "6.6",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "main",
+            "version": "5.0",
+            "ref": "46c9cd2c1e07f0fcfd97e96f12b03b2e0845c4cd"
+        },
+        "files": [
+            "config/packages/fos_elastica.yaml"
+        ]
     },
     "friendsofsymfony/rest-bundle": {
         "version": "3.8",
