@@ -1,0 +1,10 @@
+Sylius\Component\Core\Model\Image:
+    properties:
+        file:
+            - Symfony\Component\Validator\Constraints\Image:
+                groups: [sylius]
+                mimeTypes:
+                    - image/jpeg
+                    - image/png
+                    - image/webp
+                mimeTypesMessage: 'Seuls les fichiers JPG, PNG ou WEBP sont autorisés.'

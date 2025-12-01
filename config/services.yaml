@@ -43,3 +43,7 @@ services:
         tags:
             - { name: 'form.type' }
             - { name: 'sylius.shipping_calculator.form_type', calculator: 'weight_based' }
+
+    App\Form\Extension\MoneyTypeExtension:
+        tags:
+            - { name: form.type_extension }
