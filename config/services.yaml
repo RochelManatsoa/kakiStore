@@ -43,10 +43,16 @@ services:
         tags:
             - { name: 'form.type' }
             - { name: 'sylius.shipping_calculator.form_type', calculator: 'weight_based' }
-
+            
     App\Form\Extension\MoneyTypeExtension:
         tags:
             - { name: form.type_extension }
+
+    App\Currency\MgaMoneyFormatter:
+        decorates: 'sylius.formatter.money'
+        arguments:
+            - '@App\Currency\MgaMoneyFormatter.inner'
+            
 parameters:
     sylius.mailer.sender_address: 'contact@kak-i.com'
     sylius.mailer.sender_name: 'Nirina'
