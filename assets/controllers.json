@@ -19,6 +19,12 @@
                     "@symfony/ux-live-component/dist/live.min.css": true
                 }
             }
+        },
+        "@sylius-cms-plugin/admin": {
+            "preview": {
+                "enabled": true,
+                "fetch": "lazy"
+            }
         }
     },
     "entrypoints": []

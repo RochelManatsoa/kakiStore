@@ -66,4 +66,5 @@ return [
     Sylius\MolliePlugin\SyliusMolliePlugin::class => ['all' => true],
     FOS\ElasticaBundle\FOSElasticaBundle::class => ['all' => true],
     BitBag\SyliusElasticsearchPlugin\BitBagSyliusElasticsearchPlugin::class => ['all' => true],
+    Sylius\CmsPlugin\SyliusCmsPlugin::class => ['all' => true],
 ];
